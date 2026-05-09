@@ -27,10 +27,20 @@ class BankAccount:
             self.__balance-=amount
 
             print(f"withdrew:{amount} balance:{self.__balance}")        
+class Bank:
+    def __init__(self):
+        self.accounts={}
 
-My_account=BankAccount("supindas",1000) 
+    def add_account(self,acc_number,account_obj):
 
+        self.accounts[acc_number]=account_obj 
 
+        print(f"account {acc_number} added to the bank system")
 
-My_account.deposit(-10000)
-My_account.withdrawal(5000)
+my_bank=Bank()
+
+supin_acc=BankAccount("Supindas",1000)
+
+my_bank.add_account('999****6266',supin_acc)
+
+my_bank.accounts['999****6266'].deposit(1000)
